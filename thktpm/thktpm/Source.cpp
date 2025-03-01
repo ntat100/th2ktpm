@@ -11,6 +11,16 @@ bool isPrime(int n) {
     return true;
 }
 
+bool kiemTraNamNhuan(int nam) {
+    
+    if ((nam % 4 == 0 && nam % 100 != 0) || (nam % 400 == 0)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 
 void displayMenu() {
     cout << "===== MENU =====" << endl;
@@ -41,6 +51,18 @@ int main() {
             }
             break;
         }
+
+        case 2:
+            int num;
+            cout << "Nhap vao 1 nam: ";
+            cin >> num;
+            if (kiemTraNamNhuan(num)) {
+                cout << num << " la nam nhuan\n";
+            }
+            else
+            {
+                cout << num << " khong la nam nhuan\n";
+            }
         case 3:
             cout << "EXIT!" << endl;
             break;
